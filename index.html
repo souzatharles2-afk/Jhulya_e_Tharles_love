@@ -1,0 +1,80 @@
+<!DOCTYPE html><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>🤍Jhulya_e_Tharles_lovers❤️</title><link href=https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cinzel rel=stylesheet><style>
+body{margin:0;background:url(fundo.jpg)center/cover no-repeat fixed;color:#fff;text-align:center;overflow:auto}
+h1{font:48px Cinzel;color:#ff1a1a;margin-top:80px}
+.t{text-shadow:-2px 0#000,2px 0#000,0-2px#000,0 2px#000,-2px-2px#000,2px 2px#000,-2px 2px#000,2px-2px#000}
+#data{font:38px 'Pinyon Script';color:#000;text-shadow:0 0 5px red,0 0 10px red,0 0 20px red,0 0 40px red}
+#contador{display:flex;justify-content:center;gap:15px;margin-top:30px;flex-wrap:wrap}
+.box{background:#111;border:3px solid #ff1a1a;border-radius:15px;padding:15px 20px;min-width:90px}
+.box span{font-size:28px;display:block}
+.box small{font-size:14px;color:#ccc}
+.c{position:fixed;top:-20px;font-size:22px;animation:f linear}
+@keyframes f{to{transform:translateY(110vh)}}
+.player-container{position:relative;margin:20px auto;width:90%;max-width:500px;background:#000;border:3px solid #ff1a1a;border-radius:15px;overflow:hidden;padding:10px}
+.player-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.player-bg .heart{position:absolute;font-size:14px;animation:heartAnim linear infinite;color:red;opacity:.7}
+@keyframes heartAnim{0%{transform:translateY(0) scale(1)}100%{transform:translateY(-100px) scale(1.3)}}
+.play-btn{background:none;color:#ff1a1a;border:none;font-size:24px;cursor:pointer;margin-right:10px}
+.progress{width:60%;height:10px;background:#111;border:2px solid #ff1a1a;border-radius:5px;display:inline-block;vertical-align:middle;position:relative}
+.bar{height:100%;background:#ff1a1a;width:0;border-radius:3px;position:absolute;top:0;left:0}
+.msg-box{position:relative;margin:30px auto;width:90%;max-width:600px;background:#000;border:3px solid #ff1a1a;border-radius:15px;padding:25px;color:#fff;font-family:'Pinyon Script';text-align:left;font-size:36px;overflow:hidden}
+.msg-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.msg-bg .heart{position:absolute;font-size:14px;animation:heartAnim linear infinite;color:red;opacity:.2}
+
+/* BOTÃO E ANIMAÇÃO CENTRALIZADA COM LEFT/RIGHT 50 */
+#botao-gato{margin:20px auto;padding:15px 25px;font-size:24px;border-radius:12px;border:3px solid #ff1a1a;background:#000;color:#ff1a1a;cursor:pointer;display:block}
+#gato-container{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);display:none;z-index:1000}
+.gato{width:100px;height:100px;background-size:contain;background-repeat:no-repeat;position:absolute;top:0;transition:all 1s ease}
+#gato-preto{background-image:url('gato_preto.png');right:0;}
+#gato-branco{background-image:url('gato_branco.png');left:0;}
+#coracao{position:absolute;top:-80px;left:50%;transform:translateX(-50%) scale(0);font-size:50px;color:red;transition:transform 1s ease}
+.animar #gato-preto{right:50%;}
+.animar #gato-branco{left:50%;}
+.animar #coracao{transform:translateX(-50%) scale(1)}
+</style>
+
+<h1><span class=t>Nosso eterno amor e felicidade</span> 🌹</h1>
+<p id=data>Juntos desde 06/09/2024</p>
+<div id=contador>
+<div class=box><span id=dias>0</span><small>Dias</small></div>
+<div class=box><span id=horas>0</span><small>Horas</small></div>
+<div class=box><span id=minutos>0</span><small>Minutos</small></div>
+<div class=box><span id=segundos>0</span><small>Segundos</small></div>
+</div>
+
+<div class="player-container" id="player"><div class="player-bg" id="hearts"></div><button class=play-btn id=play>▶️</button><div class=progress><div class=bar id=bar></div></div></div>
+<audio id=a src=musica.mp3 loop></audio>
+
+<div class="msg-box"><div class="msg-bg" id="hearts2"></div>
+Jhulya meu amor fiz esse site com carinho para o nosso namoro.<br>
+Eu te amo muito você é uma menina incrível e especial, espero ter uma vida toda ao seu lado e se divertir muito.<br>
+Obrigado por momentos especiais, sorrisos e abraços como nosso primeiro beijo de língua, quando vc derrubou meu açaí e quando vc era toda tímida com a tua camisa preta com um buraco pra vc colocar o dedo ksks, minha lindinha fofa, prefiro de cabelo solto rsrsrs.<br>
+
+<!-- BOTÃO E ANIMAÇÃO NO FINAL -->
+<button id="botao-gato">Clique aqui</button>
+<div id="gato-container">
+  <div id="gato-preto" class="gato"></div>
+  <div id="gato-branco" class="gato"></div>
+  <div id="coracao">❤️</div>
+</div>
+</div>
+
+<script>
+let i=new Date("2024-09-06"),d=dias,h=horas,m=minutos,s=segundos,a=document.getElementById("a"),btn=document.getElementById("play"),bar=document.getElementById("bar"),hearts=document.getElementById("hearts"),hearts2=document.getElementById("hearts2");
+setInterval(()=>{let t=(new Date-i)/1e3|0;d.innerText=t/86400|0;h.innerText=t%86400/3600|0;m.innerText=t%3600/60|0;s.innerText=t%60},1e3);
+setInterval(()=>{let e=document.createElement("div");e.className="c";e.style.left=Math.random()*100+"vw";e.style.animationDuration=3+Math.random()*4+"s";e.innerHTML="❤️";document.body.appendChild(e);setTimeout(()=>e.remove(),7e3)},300);
+btn.onclick=()=>{a.paused?a.play():a.pause();btn.textContent=a.paused?"▶️":"⏸️"};
+a.ontimeupdate=()=>bar.style.width=100*a.currentTime/a.duration+"%";
+a.onended=()=>a.play();a.play().catch(()=>{});
+setInterval(()=>{let h=document.createElement("div");h.className="heart";h.innerText="❤️";h.style.left=Math.random()*90+"%";h.style.fontSize=12+Math.random()*12+"px";h.style.animationDuration=2+Math.random()*2+"s";hearts.appendChild(h);setTimeout(()=>h.remove(),4000)},300);
+setInterval(()=>{let h=document.createElement("div");h.className="heart";h.innerText="❤️";h.style.left=Math.random()*90+"%";h.style.fontSize=12+Math.random()*12+"px";h.style.animationDuration=3+Math.random()*2+"s";hearts2.appendChild(h);setTimeout(()=>h.remove(),5000)},400);
+
+/* ANIMAÇÃO DOS GATINHOS DIREITA/ESQUERDA 50 */
+const botao=document.getElementById("botao-gato");
+const container=document.getElementById("gato-container");
+botao.onclick=()=>{
+  container.style.display="block";
+  container.classList.remove("animar");
+  setTimeout(()=>container.classList.add("animar"),50);
+  setTimeout(()=>container.style.display="none",2000);
+}
+</script>
